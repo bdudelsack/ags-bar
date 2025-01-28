@@ -1,0 +1,117 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+$selected-bg-color: #{"@theme_selected_bg_color"};
+$headerbar-bg-color: #{"@headerbar_bg_color"};
+$headerbar-fg-color: #{"@headerbar_fg_color"};
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 10pt;
+    font-weight: 400;
+}
+
+/*
+window.Bar {
+    background: transparent;
+    color: $fg-color;
+    font-weight: bold;
+
+    >centerbox {
+        background: $bg-color;
+        border-radius: 10px;
+        margin: 8px;
+    }
+
+    button {
+        border-radius: 8px;
+        margin: 2px;
+    }
+}
+*/
+
+window,
+decoration,
+image,
+scale,
+widget,
+button,
+label,
+slider,
+levelbar {
+    all: unset;
+}
+
+window.bar {
+    color: $fg-color;
+    font-size: 10pt;
+}
+
+button {
+    min-width: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+}
+
+.workspaces button {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.workspaces button:active {
+    background-color: $selected-bg-color;
+}
+
+.workspaces button:hover {
+    /* border-bottom: 3px solid @theme_fg_color; */
+}
+
+.systemtray button {
+    margin: 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+.workspaces button.focused {
+    /* border-bottom: 3px solid @theme_selected_bg_color; */
+    color: $selected-bg-color;
+}
+
+.client-title {
+    color: $headerbar-fg-color;
+}
+
+.notification {
+    color: yellow;
+}
+
+levelbar block,
+highlight {
+    min-height: 8px;
+}
+
+.box {
+    /* background-color: red; */
+    background-color: $headerbar-bg-color;
+    border-radius: 10px;
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.p-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.systemtray button:not(:first-child) {
+    margin-left: 5px;
+}
+
+.systemtray-icon {
+    font-size: 1.3em;
+}
