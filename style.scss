@@ -75,6 +75,16 @@ label {
     font-weight: bold;
 }
 
+
+// .workspaces button:not(.focused).current {
+//     color: $fg-color
+// }
+
+.workspaces button.dimmed {
+    /* border-bottom: 3px solid @theme_selected_bg_color; */
+    color: #999;
+}
+
 .workspaces button.focused {
     /* border-bottom: 3px solid @theme_selected_bg_color; */
     color: $selected-bg-color;

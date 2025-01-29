@@ -6,15 +6,15 @@ import Workspaces from "./Workspaces"
 import BatteryLevel from "./BatteryLevel"
 import Volume from "./Volume"
 
-function Left() {
+function Left({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) {
     return (
         <box spacing={8}>
-            <Workspaces />
+            <Workspaces gdkmonitor={gdkmonitor} />
         </box>
     )
 }
 
-function Center() {
+function Center({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) {
     return (
         <box spacing={8}>
             <ClientTitle />
@@ -22,7 +22,7 @@ function Center() {
     )
 }
 
-function Right() {
+function Right({ gdkmonitor }: { gdkmonitor: Gdk.Monitor }) {
     return (
         <box spacing={8} halign={Gtk.Align.END}>
             <Volume />
@@ -48,9 +48,9 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
             marginStart={10}
             marginEnd={10}
             marginTop={10}
-            startWidget={<Left />}
-            centerWidget={<Center />}
-            endWidget={<Right />}
+            startWidget={<Left gdkmonitor={gdkmonitor} />}
+            centerWidget={<Center gdkmonitor={gdkmonitor} />}
+            endWidget={<Right gdkmonitor={gdkmonitor} />}
         >
         </centerbox>
     </window>
