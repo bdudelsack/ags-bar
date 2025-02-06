@@ -19,14 +19,12 @@
       packages.${system}.default = ags.lib.bundle {
         inherit pkgs;
         src = ./.;
-        name = "ags-bar"; # name of executable
+        name = "ags-bar-1.0.1"; # name of executable
         entry = "app.ts";
         gtk4 = false;
 
         # additional libraries and executables to add to gjs' runtime
         extraPackages = extraPackages;
-
-        version = "1.0.0";
       };
 
       devShells.${system}.default = pkgs.mkShell {
