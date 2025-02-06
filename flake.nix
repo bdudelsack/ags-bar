@@ -25,6 +25,8 @@
 
         # additional libraries and executables to add to gjs' runtime
         extraPackages = extraPackages;
+
+        version = "1.0.0";
       };
 
       devShells.${system}.default = pkgs.mkShell {
