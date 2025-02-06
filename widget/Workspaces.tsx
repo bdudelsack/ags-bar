@@ -20,16 +20,14 @@ export default function Workspaces({ gdkmonitor }: WorkspacesProps) {
     const hypr = Hyprland.get_default()
     const monitorId = getGdkMonitorId(gdkmonitor)
 
-    console.log("Gdk.Monitor", gdkmonitor)
-
     return <box className="workspaces box">
         {bind(hypr, "workspaces").as(wss => wss
             .filter(ws => !(ws.id >= -99 && ws.id <= -2)) // filter out special workspaces
-            .filter(ws => ws.monitor.id == monitorId)
+            .filter(ws => ws.monitor?.id == monitorId)
             .sort((a, b) => a.id - b.id)
             .map(ws => {
                 const workspace = bind(hypr, "focusedWorkspace")
-                const currentMonitorClassName = monitorId != ws.monitor.id ? "dimmed" : ""
+                const currentMonitorClassName = monitorId != ws.monitor?.id ? "dimmed" : ""
                 const className = workspace.as(fw => ws === fw ? "focused" : currentMonitorClassName)
 
                 return (
