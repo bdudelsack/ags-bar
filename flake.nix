@@ -19,7 +19,7 @@
       packages.${system}.default = ags.lib.bundle {
         inherit pkgs;
         src = ./.;
-        name = "ags-bar-1.0.1"; # name of executable
+        name = "ags-bar-1.0.2"; # name of executable
         entry = "app.ts";
         gtk4 = false;
 
